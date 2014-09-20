@@ -1,0 +1,13 @@
+{
+  "name": "Bu",
+  "version": "0.0.1",
+  "authors": [
+    "Arthur Santana <rockslave@gmail.com>"
+    "Luiz Alexandre Barba Alvarenga <luiz.alexandre.b.a@gmail.com>"
+  ],
+  "description": "An HTML5/Phaser.io",
+  "license": "proprietary",
+  "private": true,
+  "dependencies": {
+  }
+}
