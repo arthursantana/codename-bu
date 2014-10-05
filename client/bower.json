@@ -5,7 +5,7 @@
     "Arthur Santana <rockslave@gmail.com>",
     "Luiz Alexandre Barba Alvarenga <luiz.alexandre.b.a@gmail.com>"
   ],
-  "description": "An HTML5/Phaser.io",
+  "description": "An HTML5/Phaser.io game",
   "license": "proprietary",
   "private": true,
   "dependencies": {

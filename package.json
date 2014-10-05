@@ -1,7 +1,7 @@
 {
   "name": "Bu",
   "version": "0.0.1",
-  "description": "An HTML5/Phaser.io",
+  "description": "An HTML5/Phaser.io game",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {

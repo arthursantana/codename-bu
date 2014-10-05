@@ -1,12 +1,20 @@
+% fazer o esqueleto
+   % testar o Grunt (configurar o usemin)
+- fazer o esquema dos estados
 - fazer um calibrador de voz
 - fazer a fase teste
    - fazedor/framework de fase
 - fazer a fase 0: tutorial
 - menu inicial/opções
+   - carinha pular no menu inicial quando vc grita
 - seletor de fase
 - fases de verdade: vários temas, vários powerups, vários obstáculos, várias velocidades
+- música
+   - como cancelar no microfone
 - servidor
    - highscores
    - contas_na_nuvem/faceburguer
 - spam_social
+   - logo no menu inicial
+   - quando passa de fase/morre/faz_highscore/o_caralho_a_4
 - enfiar coisas de micropagamentos

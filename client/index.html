@@ -1,1 +1,33 @@
-OI
+<!doctype html> 
+<html lang="en">                                                                      
+   <head> 
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width; user-scaleable=no; initial-scale=1.0; maximum-scale=1.0" />
+      <title>Meu teste de Phaser</title>
+      <style type="text/css">
+         body {
+            margin: 0;
+            background: white;
+         }
+         
+         #canvasDoJogo {
+            margin: 10px auto;
+            width: 288px;
+            height: 505px;
+            border: 1px solid #333333;
+         }
+      </style>
+   </head>
+   <body onload="javascript:run();">
+      <div id="canvasDoJogo">
+      </div>
+   </body>
+
+   <script type="text/javascript" src="js/phaser.min.js"></script>
+
+   <!-- build:js js/game.js -->
+   <script type="text/javascript" src="js/menu.js"></script>
+   <script type="text/javascript" src="js/main.js"></script>
+   <script type="text/javascript" src="js/game.js"></script>
+   <!-- endbuild -->
+</html>
