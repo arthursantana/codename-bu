@@ -36,6 +36,7 @@ if (!navigator.getUserMedia) {
 
          if (average > max) average = max;
          volume = average/max;
+         delete array;
       };
 
       mic.connect(analyser);
