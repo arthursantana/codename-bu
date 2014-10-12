@@ -1,14 +1,14 @@
 % fazer o esqueleto
    % testar o Grunt (configurar o usemin)
-- fazer o esquema dos estados
+% aprender o esquema dos estados
+- menu inicial/opções corrigido: botão pra jogar? botão pra calibrar? ou o botão pra calibrar fica no seletor de fases?
+   - carinha pular no menu inicial quando vc grita
 - fazer um calibrador de voz
 - fazer a fase teste
    - fazedor/framework de fase
-- fazer a fase 0: tutorial
-- menu inicial/opções
-   - carinha pular no menu inicial quando vc grita
 - seletor de fase
 - fases de verdade: vários temas, vários powerups, vários obstáculos, várias velocidades
+   - fazer a fase 0: tutorial
 - música
    - como cancelar no microfone
 - servidor

@@ -27,10 +27,13 @@ function MenuState () {
       dude2.animations.add('walk', [5,6,7,8], 10, true);
       dude2.animations.play('walk');
 
+      game.physics.startSystem(Phaser.Physics.ARCADE);
+      game.physics.arcade.gravity.y = 500;
+
+      game.physics.arcade.enable(dude2);
+      game.physics.arcade.enable(ground);
+
       var startButton = game.add.button(game.width/2, 300, 'button', function () { game.state.start('game'); }, this);
       startButton.anchor.setTo(0.5,0.5);
-   };
-
-   this.update = function () {
    };
 }
