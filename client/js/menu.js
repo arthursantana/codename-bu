@@ -62,7 +62,7 @@ function MenuState () {
    this.update = function () {
       game.physics.arcade.collide(dude2, ground);
       text.setText("Volume: " + volume);
-      if (dude2.body.touching.down && volume > 0.4)
-         dude2.body.velocity.y = -800;
+      if (dude2.body.touching.down && volume > 0.2)
+         dude2.body.velocity.y = -800*volume;
    };
 }
