@@ -22,13 +22,13 @@ if (!navigator.getUserMedia) {
    console.log('Error: getUserMedia() not available.');
 } else {
    navigator.getUserMedia({audio: true}, function(localMediaStream) {
-      var min = 10;
-      var max = 20;
+      var min = 8;
+      var max = 12;
       var array, average, l; // auxiliary variables
 
-      bottomFreq = 88;
-      topFreq = 440;
-      centerFreq = (bottomFreq + topFreq)/2;
+      bottomFreq = 88; // low male voice
+      topFreq = 440; // that A in the middle
+      centerFreq = 220;
 
       audioContext = new AudioContext();
 
@@ -46,7 +46,8 @@ if (!navigator.getUserMedia) {
 
       array = new Uint8Array(analyserNode.frequencyBinCount);
       
-      processorNode.onaudioprocess = function () {
+      processorNode.onaudioprocess = function (event) {
+         loudness = 'onaudioprocess';
          analyserNode.getByteFrequencyData(array);
          average = getAverage(array);
 
