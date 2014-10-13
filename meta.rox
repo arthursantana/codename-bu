@@ -2,7 +2,9 @@
    % testar o Grunt (configurar o usemin)
 % aprender o esquema dos estados
 - menu inicial/opções corrigido: botão pra jogar? botão pra calibrar? ou o botão pra calibrar fica no seletor de fases?
-   - carinha pular no menu inicial quando vc grita
+   % carinha pular no menu inicial quando vc grita
+      ! memory leak
+      - funcionar no chrome
 - fazer um calibrador de voz
 - fazer a fase teste
    - fazedor/framework de fase

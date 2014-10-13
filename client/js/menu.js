@@ -44,16 +44,12 @@ function MenuState () {
       ground.body.allowGravity = false;
       ground.body.immovable = true;
 
-      text = game.add.text(game.world.centerX, game.world.centerY, "Please allow microphone access \\o/", {
+      text = game.add.text(game.world.centerX, game.world.centerY, "", {
          font: "12 Arial",
          fill: "#ffffff",
          align: "center"
       });
       text.anchor.setTo(0.5, 0.5);
-
-      game.input.onDown.add(function () {
-         this.body.velocity.y = -800;
-      }, dude2);
 
       startButton = game.add.button(game.width/2, 300, 'button', function () { game.state.start('game'); }, this);
       startButton.anchor.setTo(0.5,0.5);
@@ -61,8 +57,8 @@ function MenuState () {
 
    this.update = function () {
       game.physics.arcade.collide(dude2, ground);
-      text.setText("Volume: " + volume);
-      if (dude2.body.touching.down && volume > 0.4)
-         dude2.body.velocity.y = -800*volume;
+      text.setText("Volume: " + loudness);
+      if (dude2.body.touching.down && loudness > 0)
+         dude2.body.velocity.y = -1000*loudness;
    };
 }
