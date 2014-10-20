@@ -45,7 +45,7 @@ function MenuState () {
       ground.body.immovable = true;
 
       text = game.add.text(game.world.centerX, game.world.centerY, "", {
-         font: "Arial",
+         font: "12px Orbitron",
          fill: "#ffffff",
          align: "center"
       });

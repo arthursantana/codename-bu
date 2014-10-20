@@ -4,7 +4,7 @@
 % getUserMedia: carinha pular no menu inicial quando vc grita
    % bug: para de funcionar de repente; era culpa do Garbage Collector destruindo o processorNode; bastou declará-lo como global (imorrível)
    - funcionar no chrome
-- fazer um calibrador de voz para teste
+% fazer um calibrador de voz para teste
 - fazer a fase teste
    - fazedor/framework de fase
 - testar empacotar: crosswalk; xdk; node-webkit
