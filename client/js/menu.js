@@ -45,7 +45,7 @@ function MenuState () {
       ground.body.immovable = true;
 
       text = game.add.text(game.world.centerX, game.world.centerY, "", {
-         font: "12 Arial",
+         font: "Arial",
          fill: "#ffffff",
          align: "center"
       });
@@ -57,8 +57,8 @@ function MenuState () {
 
    this.update = function () {
       game.physics.arcade.collide(dude2, ground);
-      text.setText("Volume: " + loudness);
+      text.setText("Volume: " + loudness + "\n(" + minValue + ":" + maxValue + ")");
       if (dude2.body.touching.down && loudness > 0)
-         dude2.body.velocity.y = -1000*Math.sqrt(loudness);
+         dude2.body.velocity.y = -700*Math.sqrt(loudness);
    };
 }

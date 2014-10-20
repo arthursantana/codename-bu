@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             files: ['client/*', 'client/*/*', 'client/*/*/*'],
             tasks: ['build'],
             options: {
-               spawn: false,
+               spawn: true,
             },
          } 
       }

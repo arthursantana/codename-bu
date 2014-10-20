@@ -1,13 +1,16 @@
 % fazer o esqueleto
    % testar o Grunt (configurar o usemin)
 % aprender o esquema dos estados
-% carinha pular no menu inicial quando vc grita
+% getUserMedia: carinha pular no menu inicial quando vc grita
    % bug: para de funcionar de repente; era culpa do Garbage Collector destruindo o processorNode; bastou declará-lo como global (imorrível)
    - funcionar no chrome
-- fazer um calibrador de voz
+- fazer um calibrador de voz para teste
 - fazer a fase teste
    - fazedor/framework de fase
+- testar empacotar: crosswalk; xdk; node-webkit
+   - depois fazer um kickstarter pra fazer a versão de ios? "temos que comprar um iphone pra testar"
 - menu inicial/opções corrigido: botão pra jogar? botão pra calibrar? ou o botão pra calibrar fica no seletor de fases?
+   - calibrador de voz bonitinho e de boa usabilidade
 - seletor de fase
 - fases de verdade: vários temas, vários powerups, vários obstáculos, várias velocidades
    - fazer a fase 0: tutorial
@@ -20,3 +23,8 @@
    - logo no menu inicial
    - quando passa de fase/morre/faz_highscore/o_caralho_a_4
 - enfiar coisas de micropagamentos
+   - pagar por fases extras?
+   - pagar por 'powerups'?
+
+# known bugs
+- delay na rede pode fazer webfonts não serem carregados: pode exibir com fonte aleatória default

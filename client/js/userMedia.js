@@ -1,4 +1,7 @@
 var loudness; // the cool variable we can use to check if someone is screaming their lungs out
+var averageValue = 0;
+var minValue = 8;
+var maxValue = 12;
 
 var audioContext, micNode, bandPassFilterNode, analyserNode, processorNode; // webAudio context and nodes
 
@@ -22,9 +25,7 @@ if (!navigator.getUserMedia) {
    console.log('Error: getUserMedia() not available.');
 } else {
    navigator.getUserMedia({audio: true}, function(localMediaStream) {
-      var min = 8;
-      var max = 12;
-      var array, average, l; // auxiliary variables
+      var array, l; // auxiliary variables
 
       bottomFreq = 88; // low male voice
       topFreq = 440; // that A in the middle
@@ -47,11 +48,10 @@ if (!navigator.getUserMedia) {
       array = new Uint8Array(analyserNode.frequencyBinCount);
       
       processorNode.onaudioprocess = function (event) {
-         loudness = 'onaudioprocess';
          analyserNode.getByteFrequencyData(array);
-         average = getAverage(array);
+         averageValue = getAverage(array);
 
-         l = (average-min)/max;
+         l = (averageValue-minValue)/maxValue;
 
          if (l > 1)
             loudness = 1;
