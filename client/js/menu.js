@@ -59,6 +59,6 @@ function MenuState () {
       game.physics.arcade.collide(dude2, ground);
       text.setText("Volume: " + loudness);
       if (dude2.body.touching.down && loudness > 0)
-         dude2.body.velocity.y = -1000*loudness;
+         dude2.body.velocity.y = -1000*Math.sqrt(loudness);
    };
 }
