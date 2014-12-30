@@ -2,7 +2,6 @@ function MenuState () {
    var background;
    var ground;
    var dude;
-   var dude2;
    var title;
    var startButton;
    var text;
@@ -18,7 +17,7 @@ function MenuState () {
 
    this.create = function () {
       background = game.add.sprite(0, 0, 'background');
-      ground = game.add.tileSprite(0, 400, 335, 112, 'ground');
+      ground = game.add.tileSprite(0, 250, 550, 112, 'ground');
       
       ground.autoScroll(-300, 0);
 
@@ -27,38 +26,36 @@ function MenuState () {
 
       game.add.tween(title).to({y:115}, 350, Phaser.Easing.Sinusoidal.InOut, true, 0, 1000, true);
 
-      dude = game.add.sprite(100,352,'dude');  
-      dude2 = game.add.sprite(150,354,'dude');  
+      dude = game.add.sprite(250,200,'dude');  
+      dude.anchor.setTo(0.5, 48);
 
-      dude.animations.add('walk', [5,6,7,8], 15, true);
+      dude.animations.add('walk', [5,6,7,8], 10, true);
       dude.animations.play('walk');
-      dude2.animations.add('walk', [5,6,7,8], 10, true);
-      dude2.animations.play('walk');
 
       game.physics.startSystem(Phaser.Physics.ARCADE);
       game.physics.arcade.gravity.y = 1200;
 
-      game.physics.arcade.enable(dude2);
+      game.physics.arcade.enable(dude);
       game.physics.arcade.enable(ground);
 
       ground.body.allowGravity = false;
       ground.body.immovable = true;
 
-      text = game.add.text(game.world.centerX, game.world.centerY, "", {
+      text = game.add.text(400, 100, "", {
          font: "12px Orbitron",
          fill: "#ffffff",
          align: "center"
       });
       text.anchor.setTo(0.5, 0.5);
 
-      startButton = game.add.button(game.width/2, 300, 'button', function () { game.state.start('game'); }, this);
+      startButton = game.add.button(400, 200, 'button', function () { game.state.start('game'); }, this);
       startButton.anchor.setTo(0.5,0.5);
    };
 
    this.update = function () {
-      game.physics.arcade.collide(dude2, ground);
-      text.setText("Volume: " + loudness + "\n(" + minValue + ":" + maxValue + ")");
-      if (dude2.body.touching.down && loudness > 0)
-         dude2.body.velocity.y = -700*Math.sqrt(loudness);
+      game.physics.arcade.collide(dude, ground);
+      text.setText("Volume: " + loudness + "\n(" + minValue.toFixed(2) + ":" + maxValue.toFixed(2) + ")");
+      if (dude.body.touching.down && loudness > 0)
+         dude.body.velocity.y = -700*Math.sqrt(loudness);
    };
 }
