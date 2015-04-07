@@ -9,6 +9,6 @@
   "license": "proprietary",
   "private": true,
   "dependencies": {
-    "phaser": "~2.3.0"
+    "phaser": "~2.2.0"
   }
 }

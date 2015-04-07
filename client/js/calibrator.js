@@ -32,7 +32,7 @@ function CalibratorState () {
       }, this);
       game.time.events.add(Phaser.Timer.SECOND*5, function () {
          maxValue = sum/n * 1.2;
-         game.state.start('menu');
+         game.state.start('test');
       }, this);
    };
 

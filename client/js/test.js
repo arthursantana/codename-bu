@@ -17,20 +17,22 @@ function TestState () {
       map.addTilesetImage('Simplespimples', 'gameTiles');
 
       platforms = map.createLayer('Platforms');
-      map.setCollisionBetween(1, 100000, true, 'Platforms');
-
       platforms.resizeWorld();
+      map.setCollisionBetween(1, 2000, true, 'Platforms');
 
-      dude = game.add.sprite(300,2350,'dude');  
+      dude = game.add.sprite(30,2900,'dude');  
       dude.anchor.setTo(0.5, 48);
 
-      dude.animations.add('walk', [5,6,7,8], 10, true);
-      dude.animations.play('walk');
+      dude.animations.add('right', [5,6,7,8], 10, true);
+      dude.animations.add('left', [0,1,2,3], 10, true);
+      dude.animations.play('right');
 
       game.physics.startSystem(Phaser.Physics.ARCADE);
-      game.physics.arcade.enable(dude);
+      game.physics.arcade.enable([dude, platforms], Phaser.Physics.ARCADE);
 
-      dude.body.collideWorldBounds = true;
+      dude.body.velocity.x = 150;
+      //dude.body.bounce.y = 0.2;
+      dude.body.bounce.x = 1;
 
       game.camera.follow(dude);
 
@@ -38,12 +40,16 @@ function TestState () {
    };
 
    this.update = function () {
-      if (/*dude.body.touching.down && */loudness > 0)
+      game.physics.arcade.collide(dude, platforms);
+      if (dude.body.blocked.down && loudness > 0)
          dude.body.velocity.y = -700*Math.sqrt(loudness);
+      /*
+      if (dude.body.blocked.right)
+         dude.body.velocity.x *= -1;
+        */
    };
 
    this.render = function () {
-      //game.debug.cameraInfo(game.camera, 32, 32);
-      //game.debug.spriteCoords(dude, 32, 200);
+      game.debug.bodyInfo(dude, -200, 200);
    };
 }

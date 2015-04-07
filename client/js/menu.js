@@ -36,9 +36,6 @@ function MenuState () {
 
       game.physics.arcade.enable([dude, ground]);
 
-      dude.body.collideWorldBounds = true;
-      ground.body.collideWorldBounds = true;
-
       ground.body.allowGravity = false;
       ground.body.immovable = true;
 
@@ -54,7 +51,7 @@ function MenuState () {
    };
 
    this.update = function () {
-      //game.physics.arcade.collide(dude, ground);
+      game.physics.arcade.collide(dude, ground);
       text.setText("Volume: " + loudness + "\n(" + minValue.toFixed(2) + ":" + maxValue.toFixed(2) + ")");
       if (dude.body.touching.down && loudness > 0)
          dude.body.velocity.y = -700*Math.sqrt(loudness);
