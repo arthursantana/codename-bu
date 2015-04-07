@@ -14,8 +14,8 @@ function MenuState () {
       game.load.spritesheet('dude', 'img/dude.png', 32, 48);
    };
 
-
    this.create = function () {
+      game.physics.startSystem(Phaser.Physics.ARCADE);
       background = game.add.sprite(0, 0, 'background');
       ground = game.add.tileSprite(0, 250, 550, 112, 'ground');
       
@@ -32,11 +32,12 @@ function MenuState () {
       dude.animations.add('walk', [5,6,7,8], 10, true);
       dude.animations.play('walk');
 
-      game.physics.startSystem(Phaser.Physics.ARCADE);
       game.physics.arcade.gravity.y = 1200;
 
-      game.physics.arcade.enable(dude);
-      game.physics.arcade.enable(ground);
+      game.physics.arcade.enable([dude, ground]);
+
+      dude.body.collideWorldBounds = true;
+      ground.body.collideWorldBounds = true;
 
       ground.body.allowGravity = false;
       ground.body.immovable = true;
@@ -48,12 +49,12 @@ function MenuState () {
       });
       text.anchor.setTo(0.5, 0.5);
 
-      startButton = game.add.button(400, 200, 'button', function () { game.state.start('game'); }, this);
+      startButton = game.add.button(400, 200, 'button', function () { game.state.start('test'); }, this);
       startButton.anchor.setTo(0.5,0.5);
    };
 
    this.update = function () {
-      game.physics.arcade.collide(dude, ground);
+      //game.physics.arcade.collide(dude, ground);
       text.setText("Volume: " + loudness + "\n(" + minValue.toFixed(2) + ":" + maxValue.toFixed(2) + ")");
       if (dude.body.touching.down && loudness > 0)
          dude.body.velocity.y = -700*Math.sqrt(loudness);

@@ -26,6 +26,18 @@ module.exports = function(grunt) {
             cwd: 'client/bower_components/phaser/build',
             src: 'phaser.min.js',
             dest: 'dist/js/'
+         },
+         tilesets: {
+            expand: true,
+            cwd: 'client/img/tilesets',
+            src: '*',
+            dest: 'dist/img/tilesets'
+         },
+         maps: {
+            expand: true,
+            cwd: 'client/maps',
+            src: '*',
+            dest: 'dist/maps'
          }
       },
 
