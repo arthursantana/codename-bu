@@ -46,7 +46,7 @@ function MenuState () {
       });
       text.anchor.setTo(0.5, 0.5);
 
-      startButton = game.add.button(400, 200, 'button', function () { game.state.start('test'); }, this);
+      startButton = game.add.button(400, 200, 'button', function () { game.state.start('calibrator'); }, this);
       startButton.anchor.setTo(0.5,0.5);
    };
 
